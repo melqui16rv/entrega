@@ -1,0 +1,30 @@
+/* Estilos generales */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.opcion {
+    margin: 10px; /* Espacio entre las imágenes */
+    text-align: center;
+    transition: transform 0.3s ease; /* Transición suave de 0.3 segundos al transformar */
+}
+
+.opcion img {
+    max-width: 250px; /* Para asegurar que la imagen no sobrepase el ancho del contenedor */
+    height: auto;
+}
+
+/* Efecto de undimiento al pasar el ratón */
+.opcion:hover {
+    transform: translateY(5px); /* Desplaza la tarjeta hacia abajo */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .opcion {
+        flex-basis: 100%; /* Ocupará todo el ancho en pantallas pequeñas */
+    }
+}

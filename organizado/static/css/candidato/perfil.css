@@ -1,0 +1,74 @@
+* {margin: 0;padding: 0;}
+.contenedor {display: grid; grid-template-columns: 260px 260px 160px  repeat(17, 160px);; grid-template-rows: repeat(7, 110px); height: 100vh;}
+
+
+.perfil {
+    position: flex;
+    background: #F6F6F6;
+    grid-row: 1 / 8;
+    width: 100%;
+    height: 100vh;
+}
+
+.logoo {width: 100%;}
+.logo { 
+    position: relative;
+    display: flex;
+    top: 0;
+    width: 140px;
+    height: auto;
+    transition: transform 0.9s ease;
+    margin-left: 15%;
+}
+.logo:hover {transform: translateX(20px);}
+
+.flex1{display: flex; position: relative;}
+
+.flex2 {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+}
+
+.foto{
+    position: relative;
+    background-color: rgb(240, 240, 240);
+    height: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    padding: 50px;
+}
+.foto img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-left: 25%;
+    margin-top: 15%;
+}
+
+
+.info{
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+}
+.nombre, .apellido, .correo, .telefono{
+    background-color: rgb(217, 217, 217);
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.flex3 {
+    color: #20486B;
+    text-align: center;
+    font-family: Inter;
+    font-size: 12px;
+    margin-top: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

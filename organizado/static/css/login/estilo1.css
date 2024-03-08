@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    height: 100vh;
+}
+
+.contenedor {
+    background: white;
+    margin: 33px;
+    border-radius: 13px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    
+}
+
+.logo h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: chartreuse;
+}
+
+.logo p {
+    font-size: 14px;
+    color: darkgreen;
+}
+
+.formulario {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.formulario h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.formulario label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.goS {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario a {
+    text-decoration: none
+}
+

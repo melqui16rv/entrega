@@ -1,0 +1,55 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static  'css/formularios/ofertaForms.css'%}">
+        <title>Formulario de Ofertas</title>
+    </head>
+    <body>
+        <h2>Formulario de Ofertas</h2>
+        <a class="atras" href="{%url 'postulaciones'%}"><button >Atras</button></a>
+        <form method="post" action="{%url 'formulario_ofertas'%}">
+        {% csrf_token %} 
+        <label for="codigo">Código:</label>
+        <input type="number" name="codigo" required><br>
+
+        <label for="nombre_cargo">Nombre del Cargo:</label>
+        <input type="text" name="nombre_cargo" required><br>
+
+        <label for="sueldo">Sueldo:</label>
+        <input type="number" name="sueldo" step="0.01" required><br>
+
+        <label for="experiencia">Experiencia:</label>
+        <input type="text" name="experiencia" required><br>
+
+        <label for="tipo_contrato">Tipo de Contrato:</label>
+        <input type="text" name="tipo_contrato" required><br>
+
+        <label for="modalidad_trabajo">Modalidad de Trabajo:</label>
+        <input type="text" name="modalidad_trabajo" required><br>
+
+        <label for="localizacion">Localización:</label>
+        <input type="text" name="localizacion" required><br>
+
+        <label for="n_vacantes">Número de Vacantes:</label>
+        <input type="number" name="n_vacantes" required><br>
+
+        <label for="postulaciones">Postulaciones:</label>
+        <input type="number" name="postulaciones" required><br>
+
+        <label for="fecha_inicio">Fecha de Inicio:</label>
+        <input type="date" name="fecha_inicio" required><br>
+
+        <label for="fecha_fin">Fecha de Fin:</label>
+        <input type="date" name="fecha_fin" required><br>
+        {{ forms }}
+        <button type="submit">Guardar Oferta</button>
+    </form>
+</body>
+</html>
+
+
+
+

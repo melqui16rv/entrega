@@ -1,0 +1,43 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{%static 'css/inicio/comun.css'%}" rel="stylesheet">
+    <link href="{%static 'css/inicio/nosotrosP/nosotros.css'%}" rel="stylesheet">
+    <link href="{%static 'css/login/estilo1.css'%}" rel="stylesheet">
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <header>
+        <img src="{%static 'img/logo.png'%}" alt="Logo CIDE">
+        <a href="{%url 'select'%}"><button>Cambiar rol</button></a>
+        <a href="{%url 'navegador'%}"><button>Busqueda</button></a>
+        <a href="{%url 'contacta'%}"><button>Contacto</button></a>
+    </header>
+
+    <div class="contenedor">
+        <div class="logo">
+            <img src="{%static 'img/logo.png'%}" alt="Logo">
+            <h2>Postulaciones y Gestión de Vacantes</h2>
+            <p>PGV: Facilitando el camino hacia tu futuro laboral al conectar talento con oportunidades.</p>
+        </div>
+        <div class="formulario">
+            
+            <form action="#">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+
+                <a class="goS" href="{%url 'agenda'%}">Iniciar Sesión</a>
+
+                <a href="#">¿Olvidaste la contraseña?</a>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

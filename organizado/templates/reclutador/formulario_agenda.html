@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{%static 'css/candidato/agenda/formulario.css'%}">
+  <title>Formulario de Entrevista</title>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Entrevista de Trabajo</h1>
+      <button onclick="window.history.back()">Retroceder</button>
+    </div>
+  </header>
+  
+  <main>
+    <form action="#" method="post">
+      {% csrf_token %}
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora" name="hora" required>
+
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+</body>
+</html>

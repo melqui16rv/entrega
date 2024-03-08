@@ -1,0 +1,108 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link href="{%static 'css/navegador/encabezado.css'%}" rel="stylesheet">
+    <link href="{%static 'css/navegador/contacta.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="../navegador2/css/contacta/pull.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <img src="{%static 'img/logo.png'%}" alt="logo" width="100px">
+        </header>
+    
+        <aside class="encabezado">
+            
+            <div class="flex4">
+                <div class="navegacion">
+                    <a class="but" href="{%url 'home'%}">Inicio</a>
+                    <a class="but" href="{%url 'select'%}">Inicio sesion</a>
+                    <a class="but" href=".{%url 'navegador'%}">Buscador</a>
+                    <a class="butA" href="{%url 'contacta'%}">Contactanos</a>
+                    <a class="but" href="{%url 'postulaciones'%}">Perfil</a>
+                </div>
+            </div>
+        </aside>
+        <div class="contacta">
+            <form id="contactForm" action="https://tu-servidor.com/procesar-formulario" method="post">
+                <div class="input-container">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-container">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span id="cerrarModal" class="cerrar-modal">×</span>
+                        <p>Mensaje enviado con éxito.</p>
+                    </div>
+                </div>
+            </form>
+        
+            <div id="mensajeExito" class="mensaje-exito"></div>
+            <div id="mensajeError" class="mensaje-error"></div>
+        
+            <script src="script.js"></script>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const mensajeExito = document.getElementById("mensajeExito");
+    const mensajeError = document.getElementById("mensajeError");
+    const modal = document.getElementById("modal");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById("nombre").value;
+        const email = document.getElementById("email").value;
+        const mensaje = document.getElementById("mensaje").value;
+
+        // Validación simple de campos
+        if (nombre === "" || email === "" || mensaje === "") {
+            mostrarMensaje(mensajeError, "Por favor, complete todos los campos.");
+        } else {
+            // Envío del formulario (simulado aquí)
+            // Puedes agregar aquí el código para enviar los datos a tu servidor
+            mostrarMensaje(mensajeExito, "Formulario enviado con éxito.");
+            form.reset();
+            mostrarModal();
+        }
+    });
+
+    function mostrarMensaje(elemento, mensaje) {
+        elemento.innerText = mensaje;
+        elemento.style.display = "block";
+        setTimeout(function () {
+            elemento.style.display = "none";
+        }, 5000); // Ocultar el mensaje después de 5 segundos
+    }
+
+    function mostrarModal() {
+        modal.style.display = "block";
+    }
+
+    const cerrarModal = document.getElementById("cerrarModal");
+    cerrarModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+});
+
+    </script>
+</body>
+</html>

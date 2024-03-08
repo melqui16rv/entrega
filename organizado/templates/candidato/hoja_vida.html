@@ -1,0 +1,107 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoja de vida</title>
+    <link href="{%static 'css/candidato/encabezado/encabezadoP.css'%}" rel="stylesheet">
+    <link href="{%static 'css/candidato/encabezado/encabezado.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/candidato/hoja_vida/hoja_vida.css'%}">
+    <link href="{%static 'css/candidato/perfil.css'%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="contenedor">
+        <header class="perfil">
+
+            <div class="flex1">
+                <div class="logoo">
+                    <img class="logo" src="{%static 'img/logo.png'%}" alt="logo.png">
+                </div>
+            </div>
+            
+            <div class="flex2">
+                <div class="foto">
+                    <img src="../img/foto.png" alt="foto.png">
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="nombre">Nombre:</div>
+                <div class="apellido">Apellido:</div>
+                <div class="correo">Correo:</div>
+                <div class="telefono">Telefono:</div>
+            </div>
+            
+            <div class="flex3">
+                <a href="">Privacidad</a>
+                <a href="">Términos</a>
+                <a href="">Ayuda</a>
+            </div>
+        </header>
+    
+        <aside class="encabezado">
+            
+            <div class="flex4">
+                <div class="navegacion">
+                    <a class="but" href="{%url 'home'%}">Inicio</a>
+                    <a class="but" href="{%url 'agenda'%}">Agenda</a>
+                    <a class="but" href="{%url 'postulaciones'%}">Postulaciones</a>
+                    <a class="butP" href="{%url 'notificaciones'%}">Notificaciones</a>
+                    <a class="but" href="{%url 'hoja_vida'%}">Hoja de vida</a>
+
+                </div>
+
+            </div>
+        </aside>
+
+    <div class="container">
+        <div class="formulario">
+
+            <h2>Cargar Hoja de Vida</h2>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+
+                    <label for="cv">Selecciona tu Hoja de Vida:</label>
+
+                    <input type="file" name="cv" id="cv" accept=".pdf, .doc, .docx">
+
+                    <label class="file-input-label" for="cv">Seleccionar Archivo</label>
+                    <div class="file-name"></div>
+                </div>
+
+                <button class="file-name1" type="submit">Cargar</button>
+                <button class="file-name1" type="button" id="view-cv">Ver Hoja de Vida</button>
+                <a href="{%url 'llenarHojaVida'%}"><button class="file-name1" type="button" id="view-cv">llenarHojaVida</button></a>
+
+            </form>
+            
+
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('cv');
+        const fileNameDisplay = document.querySelector('.file-name');
+        const viewButton = document.getElementById('view-cv');
+
+        fileInput.addEventListener('change', () => {
+            const fileName = fileInput.files[0]?.name;
+            fileNameDisplay.textContent = fileName || '';
+        });
+
+        viewButton.addEventListener('click', () => {
+            const cvFile = fileInput.files[0];
+            if (cvFile) {
+                // Abre una ventana emergente con el archivo seleccionado.
+                const viewerWindow = window.open('', '_blank', 'width=600,height=400'); // Ajusta el ancho aquí.
+                viewerWindow.document.write(`<embed src="${URL.createObjectURL(cvFile)}" width="100%" height="100%">`);
+                viewerWindow.document.title = 'Hoja de Vida';
+            }
+        });
+    </script>
+    </html>
+</body>

@@ -1,0 +1,12 @@
+* {
+    margin: 10px;
+    padding: 4px;
+}
+body {
+    background-color: rgba(106, 186, 252, 0.61);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.links {
+    background-color: brown;
+}

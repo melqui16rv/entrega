@@ -1,0 +1,83 @@
+* {margin: 0;padding: 0;}
+.contenedor {display: grid; grid-template-columns: 150px repeat(19, 100px);; grid-template-rows: repeat(7, 110px); height: 100vh;}
+
+
+.filtro {
+    position: flex;
+    background: #ffffff;
+    grid-row: 2 / 8;
+    width: 100%;
+    height: 100vh;
+}
+.public {
+    overflow-y: scroll;
+    height: 100vh;
+    grid-column: 2 / 15;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+.tituloF{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.filtroB{
+    display: grid;
+    place-items: center;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+bdo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+}
+element.style {
+    width: 100%;
+}
+select {
+    border: 0.2rem solid #168a45;
+    background-color: #32985b;
+}
+select, input[type="file"] {
+    height: 26px;
+    line-height: 26px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    display: inline-block;
+    height: 60px;
+    padding: 4px 6px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #ffffff;
+    border-radius: 4px;
+
+}
+input, button, select, textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+label, input, button, select, textarea {
+    color: white;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 16px;
+}
+label, select, button, input[type="button"], input[type="reset"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+}
+button, input, select, textarea {
+    margin: 0;
+    vertical-align: middle;
+    border: 0.1rem solid #168a45;
+    border-radius: 0.2rem;
+    background-color: #32985b;
+}
+select{
+    font-size: 13px;
+}
+

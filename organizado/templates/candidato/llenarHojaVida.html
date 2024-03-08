@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static  'css/formularios/hojavidaForms.css'%}">
+    <title>Llenar Hoja de Vida</title>
+</head>
+<body>
+    <h2>Llenar Hoja de Vida</h2>
+    <a class="atras" href="{% url 'hoja_vida' %}"><button>Atrás</button></a>
+    <form method="post" enctype="multipart/form-data" action="{% url 'llenarHojaVida' %}">
+        {% csrf_token %}
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="documento">Documento:</label>
+        <input type="text" name="documento" required><br>
+
+        <label for="libreta_militar">Libreta Militar:</label>
+        <select name="libreta_militar" required>
+            <option value="1">SI</option>
+            <option value="0">NO</option>
+        </select><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" required><br>
+
+        <label for="estado_civil">Estado Civil:</label>
+        <input type="text" name="estado_civil" required><br>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" required><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="habilidades">Habilidades:</label>
+        <textarea name="habilidades" required></textarea><br>
+
+        <label for="estudios">Estudios:</label>
+        <textarea name="estudios" required></textarea><br>
+
+        <label for="curriculum">Currículum (PDF):</label>
+        <input type="file" name="curriculum" accept=".pdf" required><br>
+
+        <button type="submit">Guardar Hoja de Vida</button>
+    </form>
+</body>
+</html>
