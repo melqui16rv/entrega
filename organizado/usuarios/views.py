@@ -21,8 +21,11 @@ def login_empresa(request):
 def hoja_vida(request):
     return render(request,'candidato/hoja_vida.html')
 
-def notificaciones(request):
-    return render(request,'reclutador/notificaciones.html')
+def notificacionesM(request):
+    return render(request,'reclutador/notificacionesM.html')
+
+def notificacionesC(request):
+    return render(request,'candidato/notificacionesC.html')
 
 def navegador(request):
     return render(request,'pag/navegador.html')
@@ -52,9 +55,13 @@ def usuariolist(request):
 
 
 #---------------------------------------------------------
-def postulaciones(request):
+def postulacionesM(request):
     data = Ofertas.objects.all()
-    return render(request, 'candidato/postulaciones.html', {'ofertas': data})
+    return render(request, 'reclutador/postulacionesM.html', {'ofertas': data})
+
+def postulacionesC(request):
+    data = Ofertas.objects.all()
+    return render(request, 'candidato/postulacionesC.html', {'ofertas': data})
 
 
 #---------------------------------------------------------
@@ -98,7 +105,7 @@ def Image(request):
             return HttpResponse('successfully uploaded')
     else:
         form = ImageForm()
-    return render(request, "templates/candidato/postulaciones", {"form": form})
+    return render(request, "templates/candidato/postulacionesM", {"form": form})
 
 
 
@@ -116,7 +123,7 @@ def actualizarOfertas(request,id_Ofertas):
        form.save()
        get_ofertas=Ofertas.objects.all()
        {"get_ofertas":get_ofertas}
-    return render(request,"candidato/postulaciones.html")
+    return render(request,"reclutador/postulacionesM.html")
     # return print("okey"),{"get_ofertas":get_ofertas}
 
 
@@ -145,7 +152,7 @@ def eliminarOferta(request, id_Ofertas):
     oferta=Ofertas.objects.get(pk=id_Ofertas)
     oferta.delete()
     ofertas=Ofertas.objects.all()
-    return render(request, "postulaciones.html",{"get_ofertas":ofertas})
+    return render(request, "postulacionesM.html",{"get_ofertas":ofertas})
 
 
 
@@ -216,7 +223,7 @@ def editar_perfil(request,id_editar):
        form.save()
        get_editar=Actualizar.objects.all()
        {"get_editar":get_editar}
-    return render(request,"candidato/postulaciones.html")
+    return render(request,"reclutador/postulacionesM.html")
     # return print("okey"),{"get_ofertas":get_ofertas}
     
 #----------------------------------------------------------------------

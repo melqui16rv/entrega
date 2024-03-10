@@ -9,7 +9,7 @@
     </head>
     <body>
         <h2>Formulario de Ofertas</h2>
-        <a class="atras" href="{%url 'postulaciones'%}"><button >Atras</button></a>
+        <a class="atras" href="{%url 'postulacionesM'%}"><button >Atras</button></a>
         <form method="post" action="{%url 'formulario_ofertas'%}">
         {% csrf_token %} 
         <label for="codigo">Código:</label>

@@ -4,39 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador</title>
-    <link href="{%static 'css/navegador/navegador.css'%}" rel="stylesheet">
+    <title>Postulaciones</title>
     <link href="{%static 'css/candidato/encabezado/encabezadoP.css'%}" rel="stylesheet">
-    <link href="{%static 'css/navegador/encabezado.css'%}" rel="stylesheet">
-
+    <link href="{%static 'css/candidato/encabezado/encabezado.css'%}" rel="stylesheet">
+    <link href="{%static 'css/candidato/postulaciones/postulaciones.css'%}" rel="stylesheet">
+    <link href="{%static 'css/candidato/perfil.css'%}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 <body>
     <div class="contenedor">
-        <header>
-            <img src="{%static 'img/logo.png'%}" alt="logo" width="100px"> 
-        </header>
+        <header class="perfil">
 
+            <div class="flex1">
+                <div class="logoo">
+                    <img class="logo" src="{%static 'img/logo.png'%}" alt="logo.png">
+                </div>
+            </div>
+
+            <div class="flex2">
+                <div class="foto">
+                    <img src="{{user.photo.url}}" alt="foto.png">
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="nombre">Nombre:</div>
+                <div class="apellido">Apellidos:</div>
+                <div class="correo">Correo:</div>
+                <div class="telefono">Telefono:</div>
+            </div>
+            <div>  
+                <a class="but" href="{%url 'actualizar'%}">Actualizar datos</a>
+            </div>
+            <div class="flex3">
+                <a href="">Privacidad</a>
+                <a href="">Términos</a>
+                <a href="">Ayuda</a>
+            </div>
+        </header>
+    
         <aside class="encabezado">
-            
             <div class="flex4">
                 <div class="navegacion">
                     <a class="but" href="{%url 'home'%}">Inicio</a>
-                    <a class="but" href="{%url 'select'%}">Inicio sesion</a>
-                    <a class="butP" href="{%url 'navegador'%}">Buscador</a>
-                    <a class="but" href="{%url 'contacta'%}">Contactanos</a>
-                    <!-- <a class="but" href="{%url 'postulaciones'%}">Perfil</a> -->
-
+                    <a class="but" href="{%url 'agendaC'%}">Agenda</a>
+                    <a class="butP" href="{%url 'postulacionesC'%}">Postulaciones</a>
+                    <a class="but" href="{%url 'notificacionesC'%}">Notificaciones</a>
+                    <a class="but" href="{%url 'hoja_vida'%}">Hoja de vida</a> 
                 </div>
+            </div>
+        </aside>
+        
+        <div class="postulaciones">
+
+
+            <div class="post">
+                <table class="table table-sm" id="table11">
+                    <thead class="table11">
+                        <th scope="col"> Código </th>
+                        <th scope="col"> Nombre del Cargo </th>
+                        <th scope="col"> Sueldo </th>
+                        <th scope="col"> Experiencia </th>
+                        <th scope="col"> Tipo de Contrato </th>
+                        <th scope="col"> Modalidad de Trabajo </th>
+                        <th scope="col"> Localización </th>
+                        <th scope="col"> Número de Vacantes </th>
+                        <th scope="col"> Postulaciones </th>
+                        <th scope="col"> Fecha de Inicio </th>
+                        <th scope="col"> Fecha de Fin </th>
+                        
+                    </thead>
+                    <tbody>
+                        {% for oferta in ofertas %}
+                        <tr>
+                            <td>{{ oferta.codigo }}</td>
+                            <td>{{ oferta.nombre_cargo }}</td>
+                            <td>{{ oferta.sueldo }}</td>
+                            <td>{{ oferta.experiencia }}</td>
+                            <td>{{ oferta.tipo_contrato }}</td>
+                            <td>{{ oferta.modalidad_trabajo }}</td>
+                            <td>{{ oferta.localizacion }}</td>
+                            <td>{{ oferta.n_vacantes }}</td>
+                            <td>{{ oferta.postulaciones }}</td>
+                            <td>{{ oferta.fecha_inicio }}</td>
+                            <td>{{ oferta.fecha_fin }}</td>
+                          
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
 
 
             </div>
-        </aside>
+            
+        </div>
 
-        <div class="filtro">
+
+        {% comment %} <div class="filtro">
             <p class="tituloF">Filtro</p>
             <div class="filtroB">
-                <button type="button" onclick="eliminarFiltros()" class="filter" speechify-initial-font-family="&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif" speechify-initial-font-size="13px">Limpiar filtros</button>
+                <button id="filtroo" type="button" onclick="eliminarFiltros()" class="btn btn-primary" speechify-initial-font-family="&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif" speechify-initial-font-size="13px">Limpiar filtros</button>
 
             </div>
             <bdo>Departamento</bdo>
@@ -159,116 +228,8 @@
                           <option value="9" speechify-initial-font-family="&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif" speechify-initial-font-size="13px">Obreros y ayudantes de procesamiento y fabricación</option>
                   
               </select>
-        </div>
-
-
-
-        <div class="butB">
-            <img src="{%static 'img/logoB.png'%}" alt="" width="50px" style="background-color: #32985b; border-radius: 2rem; margin-right: 12px;">
-            <input type="text">
-        </div>
-        
-        <div class="public">
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-            <div class="post" id="post1">post1</div>
-            <div class="post" id="post2">post2</div>
-            <div class="post" id="post3">post3</div>
-            <div class="post" id="post4">post4</div>
-            <div class="post" id="post5">post5</div>
-            <div class="post" id="post6">post6</div>
-            <div class="post" id="post7">post7</div>
-            <div class="post" id="post8">post8</div>
-        </div>
-
+        </div> {% endcomment %}
 
     </div>
-    
 </body>
 </html>

@@ -51,14 +51,14 @@
             <div class="flex4">
                 <div class="navegacion">
                     <a class="but" href="{% url 'home' %}">Inicio</a>
-                    <a class="butP" href="{% url 'agenda' %}">Agenda</a>
-                    <a class="but" href="{% url 'postulaciones' %}">Postulaciones</a>
-                    <a class="but" href="{% url 'notificaciones' %}">Notificaciones</a>
+                    <a class="butP" href="{% url 'agendaC' %}">Agenda</a>
+                    <a class="but" href="{% url 'postulacionesC' %}">Postulaciones</a>
+                    <a class="but" href="{% url 'notificacionesC' %}">Notificaciones</a>
                     <a class="but" href="{% url 'hoja_vida' %}">Hoja de vida</a> 
                 </div>
             </div>
         </aside>
-        <div class="agenda" style="padding: 10px;">
+        <div class="agendaC" style="padding: 10px;">
             <div class="info">
                 <div class="nombre">Nombre: {{ user.nombre }}</div>
                 <div class="apellido">Apellido: {{ user.apellido }}</div>
@@ -76,13 +76,13 @@
                             <div class="descripcion">Descripción: {{ agenda.descripcion }}</div>
                             
                             <!-- Botones de Editar y Eliminar -->
-                            <form method="post" action="{% url 'editar_agenda' agenda.id %}">
+                            <form method="post" action="{% url 'editar_agendaC' agenda.id %}">
                                 {% csrf_token %}
                                 <input type="submit" value="Editar">
                             </form>
                             
                             <!-- Formulario de Eliminación -->
-                            <form method="post" action="{% url 'eliminar_agenda' agenda.id %}" onsubmit="return confirm('¿Estás seguro?')">
+                            <form method="post" action="{% url 'eliminar_agendaC' agenda.id %}" onsubmit="return confirm('¿Estás seguro?')">
                                 {% csrf_token %}
                                 <input type="submit" value="Eliminar">
                             </form>
