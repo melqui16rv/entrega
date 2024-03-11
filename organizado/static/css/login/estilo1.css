@@ -3,80 +3,138 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
-    height: 100vh;
+    height: auto;
 }
 
 .contenedor {
-    background: white;
-    margin: 33px;
-    border-radius: 13px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.logo {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-.logo img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-    
-}
-
-.logo h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: chartreuse;
-}
-
-.logo p {
-    font-size: 14px;
-    color: darkgreen;
+    display: flex;
+    height: auto;
+    margin-top: 20px;
 }
 
 .formulario {
-    flex: 1;
+    width: 40%;
+    background-color: #fff;
     padding: 20px;
-    text-align: center;
-}
-
-.formulario h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.formulario form {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .formulario label {
-    font-weight: bold;
-    margin-bottom: 10px;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
 }
 
-.formulario input {
+.formulario input[type="email"],
+.formulario input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
-.goS {
-    background-color: #007BFF;
-    color: #fff;
+.formulario input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px; /* Aumentar el padding para un aspecto más grande y atractivo */
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s; /* Aplicar transición a todos los estilos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agregar una ligera sombra */
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumentar la sombra al pasar el cursor */
 }
 
 .formulario a {
-    text-decoration: none
+    display: block;
+    text-decoration: none;
+    color: #666;
+    margin-top: 10px;
 }
 
+.formulario a:hover {
+    color: #333;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+}
+
+.logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formulario {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .logo {
+        width: 80%;
+        text-align: center;
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .contenedor {
+        justify-content: center;
+    }
+
+    .formulario {
+        width: 50%;
+        margin-top: 0;
+        margin-left: 20px;
+    }
+}
+
+.formulario .inicarSecion {
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Agregar transiciones */
+}
+
+/* Estilos al pasar el cursor sobre el botón */
+.formulario .inicarSecion:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Ajusta el tamaño del botón al pasar el cursor */
+}
+
+/* Media queries para ajustar el estilo del botón en diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+    .formulario .inicarSecion {
+        padding: 12px; /* Ajusta el tamaño del botón en pantallas pequeñas */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .formulario .inicarSecion {
+        padding: 18px; /* Ajusta el tamaño del botón en pantallas grandes */
+    }
+}
