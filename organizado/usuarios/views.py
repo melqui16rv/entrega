@@ -21,11 +21,15 @@ def login_empresa(request):
 def hoja_vida(request):
     return render(request,'candidato/hoja_vida.html')
 
-def notificacionesM(request):
-    return render(request,'reclutador/notificacionesM.html')
+def inicioC(request):
+    return render(request,'candidato/inicioC.html')
+def nosotrosC(request):
+    return render(request,'candidato/nosotrosC.html')
 
-def notificacionesC(request):
-    return render(request,'candidato/notificacionesC.html')
+def perfilC(request):
+    return render(request,'candidato/perfilC.html')
+
+
 
 def navegador(request):
     return render(request,'pag/navegador.html')

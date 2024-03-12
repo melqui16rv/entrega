@@ -50,7 +50,7 @@
         <aside class="encabezado">
             <div class="flex4">
                 <div class="navegacion">
-                    <a class="but" href="{% url 'home' %}">Inicio</a>
+                    <a class="but" href="{% url 'home' %}" onclick="return confirm('¿Estás seguro de cerrar sesión?')">Cerrar sesión</a>
                     <a class="butP" href="{% url 'agendaM' %}">Agenda</a>
                     <a class="but" href="{% url 'postulacionesM' %}">Postulaciones</a>
                     <a class="but" href="{% url 'notificacionesM' %}">Notificaciones</a>
