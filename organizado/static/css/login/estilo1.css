@@ -40,17 +40,17 @@ body {
     width: 100%;
     background-color: #4CAF50;
     color: white;
-    padding: 12px; /* Aumentar el padding para un aspecto más grande y atractivo */
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s; /* Aplicar transición a todos los estilos */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agregar una ligera sombra */
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .formulario input[type="submit"]:hover {
     background-color: #45a049;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumentar la sombra al pasar el cursor */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .formulario a {
@@ -117,24 +117,24 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Agregar transiciones */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 /* Estilos al pasar el cursor sobre el botón */
 .formulario .inicarSecion:hover {
     background-color: #45a049;
-    transform: scale(1.05); /* Ajusta el tamaño del botón al pasar el cursor */
+    transform: scale(1.05);
 }
 
 /* Media queries para ajustar el estilo del botón en diferentes tamaños de pantalla */
 @media screen and (max-width: 768px) {
     .formulario .inicarSecion {
-        padding: 12px; /* Ajusta el tamaño del botón en pantallas pequeñas */
+        padding: 12px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .formulario .inicarSecion {
-        padding: 18px; /* Ajusta el tamaño del botón en pantallas grandes */
+        padding: 18px;
     }
 }
