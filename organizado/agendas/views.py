@@ -38,7 +38,7 @@ def agenda_form(request):
     else:
         form = AgendaForm()
 
-    return render(request, 'candidato/formulario_agendaM.html', {'form': form})
+    return render(request, 'reclutador/formulario_agendaM.html', {'form': form})
 
 # def agenda_formC(request):
 #     if request.method == 'POST':
