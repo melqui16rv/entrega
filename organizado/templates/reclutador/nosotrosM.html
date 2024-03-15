@@ -1,0 +1,78 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{%static 'css/candidato/encabezado/encabezadoP.css'%}" rel="stylesheet">
+    <link href="{%static 'css/candidato/encabezado/encabezado.css'%}" rel="stylesheet">
+    <link href="{%static 'css/inicio/comun.css'%}" rel="stylesheet">
+    <link href="{%static 'css/inicio/nosotrosP/nosotros.css'%}" rel="stylesheet">
+    <link href="{%static 'css/inicio/inicioP/inicio.css'%}" rel="stylesheet">
+    <title>Nosotros - CIDE</title>
+</head>
+<body>
+    <aside class="encabezado">
+        <div class="flex4">
+            <div class="navegacion">
+                <a class="but" href="{% url 'home' %}" onclick="return confirm('¿Estás seguro de cerrar sesión?')">Cerrar sesión</a>
+                <a class="butP" href="{% url 'inicioM' %}">Inicio</a>
+                <a class="but" href="{% url 'agendaM' %}">Agenda</a>
+                <a class="but" href="{% url 'postulacionesM' %}">Postulaciones</a>
+            </div>
+        </div>
+    </aside>
+
+
+    <nav>
+        <ul>
+            <li><a href="{%url 'inicioC'%}">Inicio</a></li>
+            <li><a class="iniciooo"href="{%url 'nosotros'%}">Nosotros</a></li>
+            <li><a href="https://www.sena.edu.co/es-co/Paginas/default.aspx">SENA</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div class="historia">
+        <h3 class="post-title entry-title" itemprop="name" speechify-initial-font-family="Calibri" speechify-initial-font-size="22px">
+            Nuestra historia
+        </h3>
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjbXVDTEnjWI-_EcgarmnIEXqXj4qwPSv_4OeL47H6t5Oqrqr1YGzGBmuCNvaZECdg9P6ovjk1TR9X7oyakn5RaXlZ7wxSGzypcYIXj1wpTMfjO4j8m04q7zjr852blTQ6R8dO8ELggUnbnWoeECZ-bUnhUYzx0wT28BLizcyN1Hks6DxBNnmMtbAk-=w640-h426" alt="cide.pgn" width="100%">
+        <div style="clear: both; text-align: justify;" speechify-initial-font-family="Calibri" speechify-initial-font-size="13.2px">
+            EL Centro Industrial y de Desarrollo Empresarial del SENA en Soacha, fue creado el 28 de marzo de 2007 bajo la resolución 
+            0553, mediante el acuerdo 000012 del 21 de diciembre de 2006.
+
+        </div>
+        <br>
+        <p>
+            El objeto principal de su creación lo destacamos en el Artículo Segundo que dice:
+        </p>
+        <br>
+        <p>
+            "El Centro Industrial y de Desarrollo Empresarial de Soacha prestará servicios de formación profesional integral, 
+            servicios tecnológicos, promoción y el desarrollo del empresarismo, normalización y evaluación de competencias laborales, 
+            en articulación con las cadenas productivas y los sectores de industria, comercio, agropecuario y de servicios".  
+        </p>
+    </div>
+
+
+
+    <footer>
+        <p class="piePage" style="padding: 15px 0px 15px 60px;" speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+            Servicio Nacional de Aprendizaje SENA - Centro Industrial y de Desarrollo Empresarial Soacha - Regional Cundinamarca 
+            <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+            Dirección:  Calle 13 No. 10-63 Soacha Centro - Teléfono: (601) 5978250 Ext: 18002
+            <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+            Conmutador Nacional (601) 5461500 - Extensiones 
+            <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px"> 
+            El SENA brinda a la ciudadanía, atención presencial en las 33 Regionales y 117 Centros de Formación
+            <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+            Atención al ciudadano: Bogotá (601) 3430111 - Línea gratuita y resto del país 018000 910270 
+            <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+            Atención al empresario: Bogotá (601) 3430101 - Línea gratuita y resto del país 018000 910682
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{%static 'css/login/estilo1.css'%}" rel="stylesheet">
+    <link href="{%static 'css/inicio/inicioP/inicio.css'%}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Empresa</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <img src="{%static 'img/logo.png'%}" alt="Logo CIDE">
+        <a class="but"href="{%url 'home'%}"><button>Inicio</button></a>
+        <a class="butA" href="{%url 'select'%}"><button>Cambiar rol</button></a>
+        <a href="{%url 'navegador'%}"><button>Busqueda</button></a>
+        <a href="{%url 'contacta'%}"><button>Contacto</button></a>
+    </header>
+    <div style="text-align: center;background-color: #238f4e; color: aliceblue;  font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <h3>Iniciar sesion como empresa</h3>
+    </div>
+    <div class="contenedor">
+        <h2>Registro de Empresa</h2>
+        <form action="#" method="post">
+            <label for="company_name">Nombre de la Empresa:</label>
+            <input type="text" id="company_name" name="company_name" required>
+            
+            <label for="representative_name">Nombre del Representante:</label>
+            <input type="text" id="representative_name" name="representative_name" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+</body>
+</html>

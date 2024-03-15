@@ -26,8 +26,21 @@ def inicioC(request):
 def nosotrosC(request):
     return render(request,'candidato/nosotrosC.html')
 
+
+def inicioM(request):
+    return render(request,'reclutador/inicioM.html')
+def nosotrosM(request):
+    return render(request,'reclutador/nosotrosM.html')
+
+
 def perfilC(request):
     return render(request,'candidato/perfilC.html')
+
+def registrarseC(request):
+    return render(request,'login/registrarseC.html')
+
+def registrarseM(request):
+    return render(request,'login/registrarseM.html')
 
 
 
