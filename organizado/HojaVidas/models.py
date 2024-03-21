@@ -9,8 +9,8 @@ class HojaVida(models.Model):
     direccion = models.CharField(max_length=255)
     telefono = models.CharField(max_length=20)
     email = models.EmailField()
-    habilidades = models.TextField()  
-    estudios = models.TextField()     
+    experiencia = models.TextField()  
+    profesion = models.TextField()     
     curriculum = models.FileField(upload_to='curriculums/')
 
     def __str__(self):

@@ -49,7 +49,7 @@
                         
                     </thead>
                     <tbody>
-                        {% for oferta in ofertas %}
+                        {% for oferta in oferta %}
                         <tr>
                             <td>{{ oferta.codigo }}</td>
                             <td>{{ oferta.nombre_cargo }}</td>
@@ -62,16 +62,16 @@
                             <td>{{ oferta.postulaciones }}</td>
                             <td>{{ oferta.fecha_inicio }}</td>
                             <td>{{ oferta.fecha_fin }}</td>
-                            <td><a  class="btn btn-warning" href={% url "editar_Ofertas" oferta.id%}>Editar</a></td>
+                            <td><a  class="btn btn-warning" href={% url "editar_Oferta" oferta.id%}>Editar</a></td>
                             
-                            <td><a  class="btn btn-danger" href={% url "eliminar_Ofertas" oferta.id %}>Eliminar</a></td>
+                            <td><a  class="btn btn-danger" href={% url "eliminar_Oferta" oferta.id %}>Eliminar</a></td>
                           
                             
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-                <a class="but" href="{%url 'formulario_ofertas'%}">Crear ofertas</a>
+                <a class="but" href="{%url 'formulario_oferta'%}">Crear ofertas</a>
 
 
             </div>

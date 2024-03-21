@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Ofertas, Usuario, Actualizar
-from .forms import OfertaForm, ImageForm , Actualizacion
+
+from oferta.forms import Actualizacion
+from usuarios.forms import ImageForm
+from .models import Usuario, Actualizar
 from rest_framework import viewsets
-from .serializer import OfertaSerializer
 # from .forms import FormularioAgendaForm
 # from .forms import AgendaForm
 
@@ -71,46 +72,6 @@ def usuariolist(request):
     return render(request,'usuariolist.html',data)
 
 
-#---------------------------------------------------------
-def postulacionesM(request):
-    data = Ofertas.objects.all()
-    return render(request, 'reclutador/postulacionesM.html', {'ofertas': data})
-
-def postulacionesC(request):
-    data = Ofertas.objects.all()
-    return render(request, 'candidato/postulacionesC.html', {'ofertas': data})
-
-
-#---------------------------------------------------------
-def guardar_oferta(request):
-    if request.method == 'POST':
-        form = OfertaForm(request.POST)
-        if form.is_valid():
-            
-            form.save()
-            return redirect('reclutador/formulario_ofertas')
-    else:
-        form = OfertaForm()
-
-    context = {'form': form}
-    return render(request, 'reclutador/formulario_ofertas.html', context)
-
-
-#---------------------------------------------------------
-def formulario_ofertas(request):
-    if request.method == 'POST':
-        form = OfertaForm(request.POST)
-        if form.is_valid():
-       
-            form.save()
-            return redirect('formulario_ofertas')  
-    else:
-        form = OfertaForm()
-
-
-    context = {'form': form}
-    return render(request, 'reclutador/formulario_ofertas.html', context)
-
 
 #---------------------------------------------------------
 def Image(request):
@@ -124,104 +85,6 @@ def Image(request):
         form = ImageForm()
     return render(request, "templates/candidato/postulacionesM", {"form": form})
 
-
-
-#---------------------------------------------------------
-def editarOfertas(request,id_Ofertas):
-    oferta=Ofertas.objects.filter(id=id_Ofertas).first()
-    form=OfertaForm(instance=oferta)
-    return render(request, "reclutador/editarOfertas.html",{"form":form,"oferta":oferta})
-
-#---------------------------------------------------------
-def actualizarOfertas(request,id_Ofertas):
-    oferta=Ofertas.objects.get(pk=id_Ofertas)
-    form=OfertaForm(request.POST,instance=oferta)
-    if form.is_valid():
-       form.save()
-       get_ofertas=Ofertas.objects.all()
-       {"get_ofertas":get_ofertas}
-    return render(request,"reclutador/postulacionesM.html")
-    # return print("okey"),{"get_ofertas":get_ofertas}
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-#------------------------------------------------------------------------
-
-def eliminarOferta(request, id_Ofertas):
-    oferta=Ofertas.objects.get(pk=id_Ofertas)
-    oferta.delete()
-    ofertas=Ofertas.objects.all()
-    return render(request, "postulacionesM.html",{"get_ofertas":ofertas})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#---------------------------------------------------------------------------
-
-def formulario_actualizacion(request):
-    if request.method == 'POST':
-        form = Actualizacion(request.POST)
-        if form.is_valid():
-       
-            form.save()
-            return redirect('formulario_ofertas')  
-    else:
-        form = Actualizacion()
-
-
-    context = {'form': form}
-    return render(request, 'candidato/actualizacion.html', context)
 
 
 #-------------------------------------------------------------------------
@@ -253,17 +116,3 @@ def borrarinformacion(request, id_editar):
     return render(request, "usuariolist.html",{"get_editar":editar})
 
 #-------------------------------------------------------------------------
-
-class OfertaViewSet(viewsets.ModelViewSet):
-    queryset=Ofertas.objects.all()
-    serializer_class=OfertaSerializer
-
-#-------------------------------------------------------------------------agenda
-
-
-
-
-
-
-    
-#---------------------------------------------------------------------------
