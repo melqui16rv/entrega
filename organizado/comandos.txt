@@ -1,0 +1,12 @@
+python manage.py shell
+
+
+from tu_app.models import Oferta  # reemplaza 'tu_app' con el nombre de tu aplicación
+Oferta.objects.all().delete()
+
+models.py
+	profecion = models.CharField(max_length=255, 	null=True)
+
+
+python manage.py makemigrations
+python manage.py migrate

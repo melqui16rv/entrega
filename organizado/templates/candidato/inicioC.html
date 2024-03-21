@@ -1,0 +1,111 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <link href="{%static 'css/candidato/encabezado/encabezadoP.css'%}" rel="stylesheet">
+    <link href="{%static 'css/candidato/encabezado/encabezado.css'%}" rel="stylesheet">
+        <link href="{%static 'css/inicio/inicioP/inicio.css'%}" rel="stylesheet">
+        <title>Página Principal - CIDE</title>
+    </head>
+    
+    <body>
+        <aside class="encabezado">
+            <div class="flex4">
+                <div class="navegacion">
+                    <a class="but" href="{% url 'home' %}" onclick="return confirm('¿Estás seguro de cerrar sesión?')">Cerrar sesión</a>
+                    <a class="butP" href="{% url 'inicioC' %}">Inicio</a>
+                    <a class="but" href="{% url 'agendaC' %}">Agenda</a>
+                    <a class="but" href="{% url 'postulacionesC' %}">Postulaciones</a>
+                    <a class="but" href="{% url 'hoja_vida' %}">Hoja de vida</a> 
+                </div>
+            </div>
+        </aside>
+
+            
+        <nav>
+            <ul>
+                <li><a class="iniciooo" href="{%url 'inicioC'%}">Publicaciones</a></li>
+                <li><a href="{%url 'nosotrosC'%}">Nosotros</a></li>
+                <li><a href="https://www.sena.edu.co/es-co/Paginas/default.aspx">SENA</a></li>
+            </ul>
+        </nav>
+    
+        <div class="conGaleria">
+            <div class="gallery">
+                <img src="https://www.bizneo.com/blog/wp-content/uploads/2020/04/gestion-del-talento-humano-810x455.webp" alt="Imagen 1">
+                <img src="https://imagenes.noticiasrcn.com/ImgNoticias/ofertas-de-empleo-de-la-agencia-publica-de-empleo-del-sena-2021.jpg?TaNU0wk.3Lpl.JFikHTCmtFE7hbuXnm1" alt="Imagen 3">
+                <img src="https://i.imgur.com/rtJf7TV_d.webp?maxwidth=760&fidelity=grand" alt="Imagen 2">
+                <img src="https://thelogisticsworld.com/wp-content/uploads/2020/11/talento-humano-y-tecnologia.jpg" alt="Imagen 3">
+            </div>
+        </div>
+        <div class="butGaleria">
+            <button class="prev-button">Anterior</button>
+            <button class="next-button">Siguiente</button>
+            <script src="script.js"></script>
+        </div>
+    
+        <section id="convocatorias">
+    
+            <div class="convocatoria">
+                <h3>Convocatoria 1</h3>
+                <p>Nombre de la empresa</p>
+                <p>Cargo: Nombre del cargo</p>
+                <p>Fecha de publicación: 01/09/2023</p>
+                <a href="#">Ver detalles</a>
+            </div>
+            
+        </section>
+    
+    
+    
+    
+    
+        <footer class="footerinicio">
+            <p class="piePage" style="padding: 15px 0px 15px 60px;" speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+                Servicio Nacional de Aprendizaje SENA - Centro Industrial y de Desarrollo Empresarial Soacha - Regional Cundinamarca 
+                <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+                Dirección:  Calle 13 No. 10-63 Soacha Centro - Teléfono: (601) 5978250 Ext: 18002
+                <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+                Conmutador Nacional (601) 5461500 - Extensiones 
+                <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px"> 
+                El SENA brinda a la ciudadanía, atención presencial en las 33 Regionales y 117 Centros de Formación
+                <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+                Atención al ciudadano: Bogotá (601) 3430111 - Línea gratuita y resto del país 018000 910270 
+                <br speechify-initial-font-family="Calibri" speechify-initial-font-size="12px">
+                Atención al empresario: Bogotá (601) 3430101 - Línea gratuita y resto del país 018000 910682
+            </p>
+        </footer>
+    
+        <script>
+            const gallery = document.querySelector('.gallery');
+            const images = document.querySelectorAll('.gallery img');
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
+    
+            let currentIndex = 0;
+    
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.style.transform = `translateX(${100 * (i - index)}%)`;
+                });
+            }
+    
+            showImage(currentIndex);
+    
+            prevButton.addEventListener('click', () => {
+                currentIndex = Math.max(currentIndex - 2, 0);
+                showImage(currentIndex);
+            });
+    
+            nextButton.addEventListener('click', () => {
+                currentIndex = Math.min(currentIndex + 2, images.length - 0);
+                showImage(currentIndex);
+            });
+    
+        </script>
+    </body>
+    </html>
+    

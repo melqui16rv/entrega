@@ -1,11 +1,11 @@
 from django.db import models
 
-# Create your models here.
 class Oferta(models.Model):
     codigo = models.IntegerField()
-    nombre_cargo = models.CharField(max_length=255)
-    sueldo = models.DecimalField(max_digits=10, decimal_places=2)
-    experiencia = models.TextField()
+    profecion = models.CharField(max_length=255, null=True)
+    experiencia = models.CharField(max_length=255)
+    educacion = models.CharField(max_length=255)
+    sueldo = models.FloatField()
     tipo_contrato = models.CharField(max_length=255)
     modalidad_trabajo = models.CharField(max_length=255)
     localizacion = models.CharField(max_length=255)
@@ -15,4 +15,4 @@ class Oferta(models.Model):
     fecha_fin = models.DateField()
 
     def __str__(self):
-        return f'{self.codigo} - {self.nombre_cargo}'
+        return f'{self.codigo} - {self.profecion}'
