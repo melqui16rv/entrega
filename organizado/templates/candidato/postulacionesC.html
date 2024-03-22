@@ -21,8 +21,8 @@
                     <a class="but" href="{% url 'home' %}" onclick="return confirm('¿Estás seguro de cerrar sesión?')">Cerrar sesión</a>
                     <a class="but" href="{% url 'inicioC' %}">Inicio</a>
                     <a class="but" href="{% url 'agendaC' %}">Agenda</a>
-                    <a class="but" href="{% url 'postulacionesC' %}">Postulaciones</a>
-                    <a class="butP" href="{% url 'hoja_vida' %}">Hoja de vida</a>
+                    <a class="butP" href="{% url 'postulacionesC' %}">Postulaciones</a>
+                    <a class="but" href="{% url 'hoja_vida' %}">Hoja de vida</a>
                 </div>
             </div>
         </aside>
@@ -51,7 +51,7 @@
                         {% for oferta in ofertas %}
                         <tr>
                             <td>{{ oferta.codigo }}</td>
-                            <td>{{ oferta.nombre_cargo }}</td>
+                            <td>{{ oferta.profecion }}</td>
                             <td>{{ oferta.sueldo }}</td>
                             <td>{{ oferta.experiencia }}</td>
                             <td>{{ oferta.tipo_contrato }}</td>
