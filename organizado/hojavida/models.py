@@ -15,3 +15,6 @@ class HojaVida(models.Model):
 
     def __str__(self):
         return self.nombre
+
+    class Meta:
+        db_table = 'hojavida'  # Especifica el nombre de la tabla en la base de datos
