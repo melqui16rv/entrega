@@ -40,6 +40,18 @@
                 <a href="#" style="text-align: center;">¿Olvidaste la contraseña?</a>
                 <a href="{%url 'registrarseC'%}" style="text-align: center;">registrase</a>
             </form>
+            {% comment %} <h2>Iniciar Sesión</h2>
+            {% if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required><br><br>
+                <label for="contraseña_hashed">Contraseña:</label>
+                <input type="password" id="contraseña_hashed" name="contraseña_hashed" required><br><br>
+                <button type="submit">Iniciar Sesión</button>
+            </form> {% endcomment %}
         </div>
 
     </div>

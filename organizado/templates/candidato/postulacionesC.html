@@ -21,8 +21,8 @@
                     <a class="but" href="{% url 'home' %}" onclick="return confirm('¿Estás seguro de cerrar sesión?')">Cerrar sesión</a>
                     <a class="but" href="{% url 'inicioC' %}">Inicio</a>
                     <a class="but" href="{% url 'agendaC' %}">Agenda</a>
-                    <a class="butP" href="{% url 'postulacionesC' %}">Postulaciones</a>
-                    <a class="but" href="{% url 'hoja_vida' %}">Hoja de vida</a>
+                    <a class="but" href="{% url 'postulacionesC' %}">Postulaciones</a>
+                    <a class="butP" href="{% url 'hoja_vida' %}">Hoja de vida</a>
                 </div>
             </div>
         </aside>
@@ -44,6 +44,7 @@
                         <th scope="col"> Postulaciones </th>
                         <th scope="col"> Fecha de Inicio </th>
                         <th scope="col"> Fecha de Fin </th>
+                        <th scope="col"> Postularse </th>
                         
                     </thead>
                     <tbody>
@@ -60,7 +61,7 @@
                             <td>{{ oferta.postulaciones }}</td>
                             <td>{{ oferta.fecha_inicio }}</td>
                             <td>{{ oferta.fecha_fin }}</td>
-                          
+                            <td><a class="btn btn-warning" href="{% url 'postularse_oferta' oferta.id %}">Postularse</a></td>
                             
                         </tr>
                         {% endfor %}

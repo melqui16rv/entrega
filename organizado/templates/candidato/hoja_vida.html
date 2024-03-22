@@ -32,22 +32,11 @@
     <div class="container">
         <div class="formulario">
 
-            <h2>Cargar Hoja de Vida</h2>
+            <h2>Hoja de Vida</h2>
 
             <form action="#" method="post" enctype="multipart/form-data">
-
-                <div class="form-group">
-
-                    <label for="cv">Selecciona tu Hoja de Vida:</label>
-
-                    <input type="file" name="cv" id="cv" accept=".pdf, .doc, .docx">
-
-                    <label class="file-input-label" for="cv">Seleccionar Archivo</label>
-                    <div class="file-name"></div>
-                </div>
-
-                <button class="file-name1" type="submit">Cargar</button>
-                <button class="file-name1" type="button" id="view-cv">Ver Hoja de Vida</button>
+                
+                <a  href="{%url 'ver_hoja_vida'%}"><button class="file-name1" type="button" id="view-cv">Ver Hoja de Vida</button></a>
                 <a href="{%url 'llenarHojaVida'%}"><button class="file-name1" type="button" id="view-cv">llenarHojaVida</button></a>
 
             </form>

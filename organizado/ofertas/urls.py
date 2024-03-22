@@ -13,5 +13,7 @@ urlpatterns = [
     path('editarOfertas/<int:id_Ofertas>/', views.editarOfertas, name="editar_Ofertas"),
     path('actualizarOfertas/<int:id_Ofertas>/', views.actualizarOfertas, name='actualizar_Ofertas'),
     path("eliminarOferta/<int:id_Ofertas>",views.eliminarOferta, name="eliminar_Ofertas"),
+    
+    path('postularse/<int:oferta_id>/', views.postularse_oferta, name='postularse_oferta'),
     path("", include(router.urls)),
 ]

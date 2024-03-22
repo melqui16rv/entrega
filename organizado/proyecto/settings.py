@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'usuarios.apps.UsuariosConfig',
+    'login_usuarios.apps.LoginUsuariosConfig',
     'ofertas.apps.OfertasConfig',
     'usuarios.apps.ImageConfig',
     'hojavida.apps.HojavidaConfig',
     'crispy_forms',
     'rest_framework',
     'coreapi',
+    'bcrypt',
     'agendas',
 ]
 

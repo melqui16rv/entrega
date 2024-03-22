@@ -74,7 +74,7 @@
         <h3>Iniciar sesion como candidato</h3>
     </div>
 <div class="contenedor">
-    <h2>Registro de Usuario</h2>
+    {% comment %} <h2>Registro de Usuario</h2>
     <form action="#" method="post">
         <label for="username">Nombre de Usuario:</label>
         <input type="text" id="username" name="username" required>
@@ -86,6 +86,19 @@
         <input type="password" id="password" name="password" required>
         
         <input type="submit" value="Registrarse">
+    </form> {% endcomment %}
+    <h2>Registro de Candidato</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="documento">Documento:</label>
+        <input type="number" id="documento" name="documento" required><br><br>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+        <label for="contraseña_hashed">Contraseña:</label>
+        <input type="password" id="contraseña_hashed" name="contraseña_hashed" required><br><br>
+        <button type="submit">Registrarse</button>
     </form>
 </div>
 </body>

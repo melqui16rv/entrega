@@ -6,6 +6,13 @@ from rest_framework import viewsets
 from .serializer import HojaVidaSerializer
 
 
+
+def hoja_vida_view(request):
+    hojas_de_vida = HojaVida.objects.all()
+    print(hojas_de_vida)
+    return render(request, 'candidato/ver_hojas_vida.html', {'hojas_de_vida': hojas_de_vida})
+
+
 def formulario_agenda(request):
     return render(request,'reclutador/formulario_agendaM.html')
 
@@ -24,9 +31,11 @@ def hoja_vida_form(request):
 
 
 
+def ver(request):
+    hojas_de_vida = HojaVida.objects.all()
+    print(hojas_de_vida)
+    return render(request, 'candidato/ver_hoja_vida.html', {'hojavida': hojas_de_vida})
 
-def hoja_vida_view(request):
-    return render(request, 'candidato/hoja_vida.html')
 
 
 
@@ -45,4 +54,4 @@ class HojaVidaViewSet(viewsets.ModelViewSet):
     queryset=HojaVida.objects.all()
     serializer_class=HojaVidaSerializer
 
-    
+

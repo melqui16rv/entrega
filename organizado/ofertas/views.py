@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+
+from hojavida.models import HojaVida
 from .forms import OfertaForm, Actualizacion
 from .models import Oferta
 
@@ -25,7 +27,7 @@ def guardar_oferta(request):
         form = OfertaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('postulacionesM')  # Redirigir a la página de postulaciones después de guardar
+            return redirect('postulacionesM')  
     else:
         form = OfertaForm()
 
@@ -80,3 +82,18 @@ def eliminarOferta(request, id_Ofertas):
     return redirect('postulacionesM')  # Redirigir a la página de postulaciones después de eliminar
 
 # ---------------------------------------------------------
+
+
+
+def postularse_oferta(request, oferta_id):
+    oferta = Oferta.objects.get(pk=oferta_id)
+
+    hoja_vida = HojaVida.objects.get(usuario=request.user)  
+
+    if hoja_vida.educacion == oferta.educacion and \
+       hoja_vida.experiencia == oferta.experiencia and \
+       hoja_vida.profesion == oferta.profecion:
+        
+        return redirect('postulacion_exitosa')  
+    else:
+        return redirect('postulacion_fallida')  
