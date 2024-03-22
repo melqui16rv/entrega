@@ -20,7 +20,7 @@ from django.urls import path, include
 from . import views
 from . import settings
 from django.conf.urls.static import static
-from agendas.views import agenda_form, agenda_view, AgendaViewSet
+from agendas.views import agenda_form, agenda_view
 from rest_framework import routers
 from rest_framework.routers import DefaultRouter
 from agendas.views import AgendaViewSet
@@ -35,7 +35,7 @@ urlpatterns = [
     path('',views.home,name="home"), 
 
     path('usuario/',include('usuarios.urls')),
-    path('curriculum/', include('HojaVidas.urls')),
+    path('curriculum/', include('hojavida.urls')),
     path('agendas/',include('agendas.urls')),
     path('usuario/', include('usuarios.urls')),
     path('usuario/agenda_form/', agenda_form, name='agenda_form'),

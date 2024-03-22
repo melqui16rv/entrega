@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'usuarios.apps.UsuariosConfig',
     'ofertas.apps.OfertasConfig',
     'usuarios.apps.ImageConfig',
-    'HojaVidas.apps.HojavidasConfig',
+    'hojavida.apps.HojavidaConfig',
     'crispy_forms',
     'rest_framework',
     'coreapi',
