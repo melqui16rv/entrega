@@ -7,7 +7,7 @@ from .serializer import HojaVidaSerializer
 
 
 def formulario_agenda(request):
-    return render(request,'reclutador/formulario_agenda.html')
+    return render(request,'reclutador/formulario_agendaM.html')
 
 
 def hoja_vida_form(request):
