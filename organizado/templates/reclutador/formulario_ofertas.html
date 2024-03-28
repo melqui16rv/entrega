@@ -9699,7 +9699,7 @@
 
             ];
             var availableCodes = [
-            "0011",
+                "0011",
                 "0012",
                 "0013",
                 "0014",
@@ -10289,14 +10289,20 @@
                 "9616"
             ];
             $( "#id_profecion" ).autocomplete({
-                source: availableProfessions
+                minLength: 0,
+                source: function(request, response) {
+                    var results = $.ui.autocomplete.filter(availableProfessions, request.term);
+                    response(results.slice(0, 7));
+                }
             });
             $( "#id_codigo" ).autocomplete({
-                source: availableCodes
+                minLength: 0,
+                source: function(request, response) {
+                    var results = $.ui.autocomplete.filter(availableCodes, request.term);
+                    response(results.slice(0, 7));
+                }
             });
         } );
-        </script>
-        
-        
+    </script>
 </body>
 </html>
