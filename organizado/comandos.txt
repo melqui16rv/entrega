@@ -1,7 +1,7 @@
 python manage.py shell
 
 
-from tu_app.models import Oferta  # reemplaza 'tu_app' con el nombre de tu aplicación
+from tu_app.models import Oferta  
 Oferta.objects.all().delete()
 
 models.py
